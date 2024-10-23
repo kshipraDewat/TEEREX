@@ -10,67 +10,55 @@ import About from "./pages/About"
 const AppRoutes = () => {
   return (
     <div>
-      <Routes>
-        < Route path="/"
-        element ={ 
-         <Layout>
-             <Landing/>
-         </Layout>
-             
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Landing/>
+          </Layout>
         }
-        />
-      </Routes>
-      <Routes>
-        < Route path="/about"
-        element ={ 
-         <Layout>
+      />
+       <Route
+        path="/about"
+        element={
+          <Layout>
             <About/>
-         </Layout>
-             
+          </Layout>
         }
-        />
-      </Routes>
-
-      <Routes>
-        < Route path="/product"
-        element ={ 
-        <Layout> 
-            <ProductPage/> 
-        </Layout>
+      />
+      <Route
+        path="/product"
+        element={
+          <Layout>
+            <ProductPage />
+          </Layout>
         }
-        />
-      </Routes>
-      <Routes>
-        < Route path="/cart"
-        element ={ 
-        <Layout> 
-            <CartPage/> 
-        </Layout>
+      />
+      <Route
+        path="/cart"
+        element={
+          <Layout>
+            <CartPage />
+          </Layout>
         }
-        />
-      </Routes>
-
-      <Routes>
-        < Route path="/signup"
-        element ={ 
-        <Layout> 
-            <Signup/> 
-        </Layout>
-        }
-        />
-      </Routes>
-
-      <Routes>
-        < Route path="/login"
-        element ={ 
-        <Layout> 
-            <Login/>
-        </Layout>
-        }
-        />
-      </Routes>
-
-    </div>
+      />
+      <Route
+      path="/signup"
+      element={
+       <Layout>
+          <Signup/>
+       </Layout>
+      }/>
+      <Route
+      path="/login"
+      element={
+       <Layout>
+          <Login/>
+       </Layout>
+      }/>
+    </Routes>
+  </div>
   )
 }
 

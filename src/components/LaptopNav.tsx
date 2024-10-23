@@ -27,7 +27,7 @@ const LaptopNav = () => {
 ))} */}
 
 <Link to={"/"} className='font-semibold '>Home</Link>
-<Link to={"/about"}  className='font-semibold '>About</Link>
+{/* <Link to={"/about"}  className='font-semibold '>About</Link> */}
 <Link to={"/product"}  className='font-semibold '>Product</Link>
 
 </div>
