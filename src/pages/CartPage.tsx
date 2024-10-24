@@ -14,10 +14,7 @@ const CartPage = () => {
   useEffect(() => {
     const cartItemsData = localStorage.getItem('cartItems');
     if (cartItemsData) {
-      const cartDataArr: CartItem[] = JSON.parse(cartItemsData);
-      setCartItems(cartDataArr);
-      const total = cartDataArr.reduce((sum, item) => sum + item.price, 0);
-      setTotalAmount(total);
+      setCartItems(JSON.parse(cartItemsData));
     }
     setLoading(false);
   }, []);
@@ -36,7 +33,7 @@ const CartPage = () => {
       }
     } else {
       if (cartItem.quantityInCart === 1) {
-        deleteItem(cartItem.id);
+        alert("Can not decrease further");
       } else {
         const cartItemsArr: CartItem[] = JSON.parse(JSON.stringify(cartItems));
         const index = cartItemsArr.findIndex((item) => item.id === cartItem.id);
@@ -46,15 +43,6 @@ const CartPage = () => {
         setTotalAmount(total);
       }
     }
-  };
-
-  const deleteItem = (id : number) => {
-    console.log(id);
-    const newCartArr = cartItems.filter((item) => item.id !== id);
-    setCartItems(newCartArr);
-    const total = newCartArr.reduce((sum, item) => sum + item.price, 0);
-    setTotalAmount(total);
-    localStorage.setItem("cartItems", JSON.stringify(newCartArr));
   };
 
   return (
@@ -82,7 +70,7 @@ const CartPage = () => {
                 <Button onClick={()=> handleIncOrDec(true, cartItem)}  variant='outline'>+1</Button>
 
               </div>
-              <Button onClick={() => deleteItem(cartItem.id)} variant='destructive'>Delete</Button>
+              <Button variant='destructive'>Delete</Button>
               </div>
             </div>
 
