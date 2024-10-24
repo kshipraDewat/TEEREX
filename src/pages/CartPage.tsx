@@ -48,6 +48,15 @@ const CartPage = () => {
     }
   };
 
+  const deleteItem = (id: string) => {
+    const newCartArr = cartItems.filter((item) => item.id !== id);
+    setCartItems(newCartArr);
+    const total = newCartArr.reduce((sum, item) => sum + item.price, 0);
+    setTotalAmount(total);
+    localStorage.setItem("cartItems", JSON.stringify(newCartArr));
+  };
+
+
   return (
     <div className="pt-4 px-4 lg:px-12 py-2  flex flex-col items-center  ">
       {loading ? (
@@ -73,7 +82,7 @@ const CartPage = () => {
                 <Button onClick={()=> handleIncOrDec(true, cartItem)}  variant='outline'>+1</Button>
 
               </div>
-              <Button variant='destructive'>Delete</Button>
+              <Button onClick={() => deleteItem(cartItem.id)} variant='destructive'>Delete</Button>
               </div>
             </div>
 
