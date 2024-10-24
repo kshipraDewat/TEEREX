@@ -58,7 +58,7 @@ const CartPage = () => {
 
 
   return (
-    <div className="pt-4 px-4 lg:px-12 py-2  flex flex-col items-center  ">
+    <div className="pt-4 px-4 lg:px-12 py-2   flex flex-col items-center  ">
       {loading ? (
         <div className="text-2xl font-semibold">Loading...</div>
       ) : cartItems.length > 0 ? (
@@ -66,10 +66,10 @@ const CartPage = () => {
           <div className=" ">
           <h2 className="text-3xl mb-3">Shopping Cart</h2>
             {cartItems.map((cartItem)=>(
-            <div key={cartItem.id} className=" px-10 py-8 border shadow-lg rounded flex justify-between gap-6 items-center w-[60vw]">
-              <div className="flex items-center gap-5">
+            <div key={cartItem.id} className=" my-1 px-10 py-8 border shadow rounded flex flex-col  sm:flex-row justify-between gap-6 items-center sm:w-[90vw] lg:w-[60vw]">
+              <div className="flex flex-col sm:flex-row  items-center gap-5">
               <img src={cartItem.imageURL} alt="" className="size-28" />
-              <div>
+              <div className="flex-col sm:flex-row">
                 <p className="text-xl font-semibold">{cartItem.name}</p>
                 <p className="text-gray-600 ps-2">Rs.{cartItem.price}</p>
               </div>
@@ -87,8 +87,8 @@ const CartPage = () => {
             </div>
 
            ))}
-           <Separator />
-            <h2 className="text-lg font-bold">
+           <Separator className="mt-5" />
+            <h2 className="text-lg font-bold my-5 ">
               Total amount:{" "}
               <span className="font-normal text-gray-700">
                 Rs. {totalAmount}
