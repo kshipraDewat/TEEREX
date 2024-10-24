@@ -14,7 +14,10 @@ const CartPage = () => {
   useEffect(() => {
     const cartItemsData = localStorage.getItem('cartItems');
     if (cartItemsData) {
+      const cartDataArr: CartItem[] = JSON.parse(cartItemsData)
       setCartItems(JSON.parse(cartItemsData));
+      const total = cartDataArr.reduce((sum, item)=> sum +item.price,0 );
+      setTotalAmount(total)
     }
     setLoading(false);
   }, []);

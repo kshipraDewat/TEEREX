@@ -1,4 +1,3 @@
-import { RemoveFormatting } from 'lucide-react';
 import { AtSign } from 'lucide-react';
 const Footer = () => {
   return (

@@ -1,4 +1,3 @@
-import React from 'react'
 import LaptopNav from './LaptopNav'
 
 const NavBar = () => {

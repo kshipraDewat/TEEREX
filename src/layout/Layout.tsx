@@ -1,6 +1,4 @@
 import NavBar from "@/components/NavBar"
-import Landing from "@/Landing"
-import ProductPage from "@/pages/ProductPage"
 import Footer from "@/components/Footer"
 
 type props ={
